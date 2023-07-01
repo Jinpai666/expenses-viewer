@@ -13,7 +13,12 @@ th {
     border: 1px solid #808080;
   }
 }
-
+.v-input__details{
+  height: 0 !important;
+  min-height: 0 !important;
+  max-height: 0 !important;
+  padding: 0 !important;
+}
 @media (max-width: 768px) {
   .mobile-hidden {
     display: none;
