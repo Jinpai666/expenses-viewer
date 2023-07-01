@@ -3,10 +3,15 @@ import ExpensesTable from "./components/ExpensesTable.vue";
 </script>
 
 <template>
-  <div>TopNav</div>
-  <ExpensesTable />
+  <VContainer class="container">
+    <div>TopNav</div>
+    <ExpensesTable />
+  </VContainer>
+
 </template>
 
 <style scoped>
-
+  .container{
+    max-width: 1200px !important;
+  }
 </style>

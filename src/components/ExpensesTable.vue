@@ -1,51 +1,102 @@
 <template>
-  <v-table>
-    <thead>
-    <tr>
-      <th class="text-left">
-        Name
-      </th>
-      <th class="text-left">
-        Amount
-      </th>
-      <th class="text-left">
-        Category
-      </th>
-      <th class="text-left">
-        Date
-      </th>
-      <th class="text-left">
-        Time
-      </th>
-      <th class="text-left">
-        Location
-      </th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr
-        v-for="(item, idx) in expenses"
-        :key="idx"
-    >
-      <td>{{ formatString(item.name) }}</td>
-      <td>{{ item.amount }} PLN</td>
-      <td>{{ formatString(item.category) }}</td>
-      <td>{{ formatDate(item.date) }}</td>
-      <td>{{ item.time }}</td>
-      <td>{{ item.location }}</td>
-    </tr>
-    </tbody>
-  </v-table>
-</template>
+  <div>
+    <div>
+      <v-form class="filters d-md-flex align-center justify-center">
+        <div class="filters__date-picker w-auto ma-2 pa-2 rounded-tse">
+          <div class="text-center">Period</div>
+          <label>
+            <span class="d-flex flex-wrap align-center justify-center">
+              <input class="ma-2 pa-2 rounded filters__date" type="date" v-model="startDate" />
+              <input class="ma-2 pa-2 filters__date" type="date" v-model="endDate" /></span
+            ></label>
+        </div>
+        <v-select
+            class=" w-auto  ma-2 pa-2"
+            v-model="select"
+            :items="['food', 'car']"
+            label="Category"
+        ></v-select>
+        <v-text-field
+            class=" w-auto ma-2 pa-2"
+            v-model="searchPhrase"
+            :counter="20"
+            label="Search by name"
+            required
+        ></v-text-field>
+        <v-btn @click="clearFilters">Clear</v-btn>
 
+      </v-form>
+      <v-table>
+        <thead>
+        <tr>
+          <th class="text-center">Name</th>
+          <th class="text-center">Amount</th>
+          <th class="mobile-hidden text-center">Category</th>
+          <th class="text-center">Date</th>
+          <th class="mobile-hidden text-center">Time</th>
+          <th class="mobile-hidden text-center">Location</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="text-center" v-for="(item, idx) in filteredExpenses" :key="idx">
+          <td>{{ formatString(item.name) }}</td>
+          <td>{{ item.amount }} PLN</td>
+          <td class="mobile-hidden">{{ formatString(item.category) }}</td>
+          <td class="">{{ formatDate(item.date) }}</td>
+          <td class="mobile-hidden">{{ item.time }}</td>
+          <td class="mobile-hidden">{{ item.location }}</td>
+        </tr>
+        </tbody>
+      </v-table>
+    </div>
+  </div>
+</template>
+<style lang="scss">
+@import './expensesTable.scss';
+@import '@mdi/font/css/materialdesignicons.css';
+
+</style>
 <script>
-import data from '../data/expenses.json'
+import data from "../data/expenses.json";
 
 export default {
-  data() {
-    return {
-      expenses: data.expenses
-    }
+  data: () => ({
+    select: null,
+    expenses: data.expenses,
+    searchPhrase: "",
+    startDate: "",
+    endDate: "",
+  }),
+  computed: {
+    filteredExpenses() {
+      let filteredArray = this.expenses;
+
+      if (this.select) {
+        filteredArray = filteredArray.filter(item => item.category === this.select);
+      }
+
+      if (this.searchPhrase) {
+        const searchRegex = new RegExp(this.searchPhrase, "i");
+        filteredArray = filteredArray.filter(item => searchRegex.test(item.name));
+      }
+
+      if (this.startDate) {
+        console.log(1)
+        filteredArray = filteredArray.filter(
+            item =>
+                new Date(item.date) >= new Date(this.startDate)
+        );
+      }
+      if (this.endDate) {
+        console.log(2)
+        filteredArray = filteredArray.filter(
+            item =>
+                new Date(item.date) <= new Date(this.endDate)
+        );
+      }
+
+      return filteredArray;
+    },
   },
   methods: {
     formatString(string) {
@@ -53,8 +104,14 @@ export default {
     },
     formatDate(date) {
       const formattedDate = new Date(date);
-      return formattedDate.toLocaleDateString('pl');
+      return formattedDate.toLocaleDateString("pl");
+    },
+    clearFilters() {
+      this.select = null;
+      this.searchPhrase = "";
+      this.startDate = "";
+      this.endDate = "";
     },
   },
-}
+};
 </script>
