@@ -1,60 +1,79 @@
 <template>
   <div>
     <div>
-      <v-form class="filters d-md-flex align-center justify-center">
-        <div class="filters__date-picker w-auto ma-2 pa-2 rounded-tse">
+      <v-form
+        class="filters d-md-flex align-center justify-center"
+      >
+        <div class="position-relative filters__date-picker w-auto ma-2 pa-2 rounded-tse">
           <div class="text-center">Period</div>
           <label>
             <span class="d-flex flex-wrap align-center justify-center">
-              <input class="ma-2 pa-2 rounded filters__date" type="date" v-model="startDate" />
-              <input class="ma-2 pa-2 filters__date" type="date" v-model="endDate" /></span
-            ></label>
+              <input
+                class="ma-2 pa-2 rounded filters__date"
+                type="date"
+                v-model="startDate" />
+              <input
+                class="ma-2 pa-2 rounded filters__date"
+                type="date"
+                v-model="endDate" /></span
+          ></label>
+          <v-btn
+            density="compact"
+            icon="mdi-close-circle"
+            class="position-absolute filters__button rounded-xl"
+            @click="clearDateFilters"
+            v-if="this.endDate || this.startDate"
+          ></v-btn>
         </div>
         <v-select
-            class=" w-auto  ma-2 pa-2"
-            v-model="select"
-            :items="['food', 'car']"
-            label="Category"
+          class="w-auto ma-2 pa-2 filters__input"
+          v-model="select"
+          :items="['food', 'car']"
+          label="Category"
+          clearable
         ></v-select>
         <v-text-field
-            class=" w-auto ma-2 pa-2"
-            v-model="searchPhrase"
-            :counter="20"
-            label="Search by name"
-            required
-        ></v-text-field>
-        <v-btn @click="clearFilters">Clear</v-btn>
+          class="w-auto ma-2 pa-2 filters__input"
+          v-model="searchPhrase"
+          :counter="20"
+          label="Search by name"
+          required
+          clearable
 
+        ></v-text-field>
       </v-form>
       <v-table>
         <thead>
-        <tr>
-          <th class="text-center">Name</th>
-          <th class="text-center">Amount</th>
-          <th class="mobile-hidden text-center">Category</th>
-          <th class="text-center">Date</th>
-          <th class="mobile-hidden text-center">Time</th>
-          <th class="mobile-hidden text-center">Location</th>
-        </tr>
+          <tr>
+            <th class="text-center">Name</th>
+            <th class="text-center">Amount</th>
+            <th class="mobile-hidden text-center">Category</th>
+            <th class="text-center">Date</th>
+            <th class="mobile-hidden text-center">Time</th>
+            <th class="mobile-hidden text-center">Location</th>
+          </tr>
         </thead>
         <tbody>
-        <tr class="text-center" v-for="(item, idx) in filteredExpenses" :key="idx">
-          <td>{{ formatString(item.name) }}</td>
-          <td>{{ item.amount }} PLN</td>
-          <td class="mobile-hidden">{{ formatString(item.category) }}</td>
-          <td class="">{{ formatDate(item.date) }}</td>
-          <td class="mobile-hidden">{{ item.time }}</td>
-          <td class="mobile-hidden">{{ item.location }}</td>
-        </tr>
+          <tr
+            class="text-center"
+            v-for="(item, idx) in filteredExpenses"
+            :key="idx"
+          >
+            <td>{{ formatString(item.name) }}</td>
+            <td>{{ item.amount }} PLN</td>
+            <td class="mobile-hidden">{{ formatString(item.category) }}</td>
+            <td class="">{{ formatDate(item.date) }}</td>
+            <td class="mobile-hidden">{{ item.time }}</td>
+            <td class="mobile-hidden">{{ item.location }}</td>
+          </tr>
         </tbody>
       </v-table>
     </div>
   </div>
 </template>
 <style lang="scss">
-@import './expensesTable.scss';
-@import '@mdi/font/css/materialdesignicons.css';
-
+@import "./expensesTable.scss";
+@import "@mdi/font/css/materialdesignicons.css";
 </style>
 <script>
 import data from "../data/expenses.json";
@@ -72,26 +91,28 @@ export default {
       let filteredArray = this.expenses;
 
       if (this.select) {
-        filteredArray = filteredArray.filter(item => item.category === this.select);
+        filteredArray = filteredArray.filter(
+          (item) => item.category === this.select
+        );
       }
 
       if (this.searchPhrase) {
         const searchRegex = new RegExp(this.searchPhrase, "i");
-        filteredArray = filteredArray.filter(item => searchRegex.test(item.name));
+        filteredArray = filteredArray.filter((item) =>
+          searchRegex.test(item.name)
+        );
       }
 
       if (this.startDate) {
-        console.log(1)
+        console.log(1);
         filteredArray = filteredArray.filter(
-            item =>
-                new Date(item.date) >= new Date(this.startDate)
+          (item) => new Date(item.date) >= new Date(this.startDate)
         );
       }
       if (this.endDate) {
-        console.log(2)
+        console.log(2);
         filteredArray = filteredArray.filter(
-            item =>
-                new Date(item.date) <= new Date(this.endDate)
+          (item) => new Date(item.date) <= new Date(this.endDate)
         );
       }
 
@@ -106,9 +127,7 @@ export default {
       const formattedDate = new Date(date);
       return formattedDate.toLocaleDateString("pl");
     },
-    clearFilters() {
-      this.select = null;
-      this.searchPhrase = "";
+    clearDateFilters() {
       this.startDate = "";
       this.endDate = "";
     },
