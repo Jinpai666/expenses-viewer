@@ -1,0 +1,196 @@
+{
+  "expenses": [
+    {
+      "name": "chocolate",
+      "amount": 12,
+      "category": "food",
+      "date": "2021-03-10",
+      "time": "09:30",
+      "location": "Warsaw"
+    },
+    {
+      "name": "fruit",
+      "amount": 25,
+      "category": "food",
+      "date": "2021-05-20",
+      "time": "14:15",
+      "location": "Warsaw"
+    },
+    {
+      "name": "gas",
+      "amount": 280,
+      "category": "car",
+      "date": "2021-06-05",
+      "time": "11:45",
+      "location": "Warsaw"
+    },
+    {
+      "name": "pizza",
+      "amount": 30,
+      "category": "food",
+      "date": "2021-07-12",
+      "time": "18:30",
+      "location": "Łomianki"
+    },
+    {
+      "name": "coffee",
+      "amount": 40,
+      "category": "food",
+      "date": "2022-07-16",
+      "time": "08:00",
+      "location": "Warsaw"
+    },
+    {
+      "name": "bread",
+      "amount": 8,
+      "category": "food",
+      "date": "2022-08-03",
+      "time": "12:45",
+      "location": "Warsaw"
+    },
+    {
+      "name": "cheese",
+      "amount": 21,
+      "category": "food",
+      "date": "2022-08-12",
+      "time": "15:20",
+      "location": "Warsaw"
+    },
+    {
+      "name": "fuel",
+      "amount": 320,
+      "category": "car",
+      "date": "2022-08-20",
+      "time": "09:10",
+      "location": "Łomianki"
+    },
+    {
+      "name": "bread",
+      "amount": 8,
+      "category": "food",
+      "date": "2022-09-02",
+      "time": "14:00",
+      "location": "Warsaw"
+    },
+    {
+      "name": "ham",
+      "amount": 14,
+      "category": "food",
+      "date": "2022-09-10",
+      "time": "10:30",
+      "location": "Warsaw"
+    },
+    {
+      "name": "butter",
+      "amount": 6,
+      "category": "food",
+      "date": "2022-09-18",
+      "time": "16:45",
+      "location": "Warsaw"
+    },
+    {
+      "name": "fuel",
+      "amount": 320,
+      "category": "car",
+      "date": "2022-09-24",
+      "time": "13:20",
+      "location": "Warsaw"
+    },
+    {
+      "name": "car wash",
+      "amount": 60,
+      "category": "car",
+      "date": "2022-09-28",
+      "time": "09:00",
+      "location": "Warsaw"
+    },
+    {
+      "name": "snacks",
+      "amount": 15,
+      "category": "food",
+      "date": "2023-02-08",
+      "time": "11:30",
+      "location": "Łomianki"
+    },
+    {
+      "name": "oil change",
+      "amount": 100,
+      "category": "car",
+      "date": "2023-03-15",
+      "time": "14:45",
+      "location": "Warsaw"
+    },
+    {
+      "name": "groceries",
+      "amount": 90,
+      "category": "food",
+      "date": "2023-04-20",
+      "time": "10:10",
+      "location": "Łomianki"
+    },
+    {
+      "name": "parking",
+      "amount": 10,
+      "category": "car",
+      "date": "2023-06-01",
+      "time": "13:30",
+      "location": "Warsaw"
+    },
+    {
+      "name": "fruit",
+      "amount": 25,
+      "category": "food",
+      "date": "2021-05-20",
+      "time": "09:00",
+      "location": "Łomianki"
+    },
+    {
+      "name": "coffee",
+      "amount": 40,
+      "category": "food",
+      "date": "2022-07-16",
+      "time": "12:30",
+      "location": "Warsaw"
+    },
+    {
+      "name": "bread",
+      "amount": 8,
+      "category": "food",
+      "date": "2022-08-03",
+      "time": "15:10",
+      "location": "Łomianki"
+    },
+    {
+      "name": "ham",
+      "amount": 14,
+      "category": "food",
+      "date": "2022-09-10",
+      "time": "11:20",
+      "location": "Warsaw"
+    },
+    {
+      "name": "butter",
+      "amount": 6,
+      "category": "food",
+      "date": "2022-09-18",
+      "time": "18:00",
+      "location": "London"
+    },
+    {
+      "name": "fuel",
+      "amount": 320,
+      "category": "car",
+      "date": "2022-09-24",
+      "time": "16:30",
+      "location": "London"
+    },
+    {
+      "name": "parking",
+      "amount": 10,
+      "category": "car",
+      "date": "2023-06-01",
+      "time": "09:45",
+      "location": "London"
+    }
+  ]
+}
