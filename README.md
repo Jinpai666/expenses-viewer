@@ -11,5 +11,6 @@ https://mk-expenses.netlify.app/
 https://github.com/Jinpai666/expenses-viewer
 
 ## To run locally
-npm install
+npm install  
+
 npm run dev
