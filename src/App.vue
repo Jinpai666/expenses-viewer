@@ -6,6 +6,7 @@ import TopNavigation from "./components/topNavigation/TopNavigation.vue";
 
 <template>
   <VContainer class="container">
+    <h1>Expenses Table</h1>
     <TopNavigation/>
     <MobileNavigation/>
     <ExpensesTable />
@@ -16,5 +17,11 @@ import TopNavigation from "./components/topNavigation/TopNavigation.vue";
 <style scoped>
   .container{
     max-width: 1200px !important;
+  }
+  h1{
+    font-family: 'Catamaran', sans-serif;
+    font-weight: bold;
+    font-size: 36px;
+    text-align: center;
   }
 </style>

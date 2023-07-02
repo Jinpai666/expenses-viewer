@@ -1,0 +1,30 @@
+.navigation{
+  font-family: 'Catamaran', sans-serif;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #00ddc2;
+  text-shadow: #00ddc2;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  &__item {
+
+    &:hover {
+      cursor: pointer;
+      color: #00ddc2;
+      text-shadow: 0 0 15px #00ddc2;
+    }
+  }
+  &__list{
+    display: flex;
+    justify-content: space-between;
+  &_left{
+    width: 50%;
+  }
+  &_right{
+    width: 15%;
+  }
+  }
+}

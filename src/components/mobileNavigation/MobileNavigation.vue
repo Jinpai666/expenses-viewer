@@ -1,7 +1,25 @@
 <template>
-<div>
-  top
-</div>
+  <v-menu >
+    <template v-slot:activator="{ props }">
+      <v-btn
+          class="mobile-menu"
+          v-bind="props"
+          icon="mdi-menu"
+      >
+      </v-btn>
+    </template>
+    <v-list>
+      <v-list-item
+          v-for="(item, index) in items"
+          :key="index"
+          :value="index"
+      >
+        <v-list-item-title>
+          <a class="mobile-menu__link" href="#">{{ item.title }}</a>
+        </v-list-item-title>
+      </v-list-item>
+    </v-list>
+  </v-menu>
 </template>
 
 <script>

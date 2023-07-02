@@ -1,36 +1,33 @@
 <template>
-  <v-menu >
-    <template v-slot:activator="{ props }">
-      <v-btn
-          class="mobile-menu"
-          v-bind="props"
-          icon="mdi-menu"
-      >
-      </v-btn>
-    </template>
-    <v-list>
-      <v-list-item
-          v-for="(item, index) in items"
-          :key="index"
-          :value="index"
-      >
-        <v-list-item-title>
-          <a class="mobile-menu__link" href="#">{{ item.title }}</a>
-          </v-list-item-title>
-      </v-list-item>
-    </v-list>
-  </v-menu>
+  <div class="navigation">
+    <ul class="navigation__list navigation__list_left">
+      <li class="navigation__item" v-for="(item, index) in leftItems" :key="index">
+        <a class="navigation__link" href="#"></a>
+        {{ item.title }}
+      </li>
+    </ul>
+    <ul class="navigation__list navigation__list_right">
+      <li class="navigation__item" v-for="(item, index) in rightItems" :key="index">
+        <a class="navigation__link" href=""></a>
+        {{ item.title }}
+      </li>
+    </ul>
+  </div>
+
 </template>
 
 <script>
 export default {
   data: () => ({
     name: "TopNavigation",
-    items: [
+    leftItems: [
       { title: 'Dashboard' },
       { title: 'Reports' },
       { title: 'Expenses' },
       { title: 'Settings' },
+
+    ],
+    rightItems: [
       { title: 'Profile' },
       { title: 'Logout' },
     ],
