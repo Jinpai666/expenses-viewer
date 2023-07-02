@@ -1,0 +1,12 @@
+.mobile-menu{
+
+  &__link{
+    text-decoration: none;
+    color: #000;
+  }
+}
+@media (min-width: 768px) {
+  .mobile-menu {
+    display: none !important;
+  }
+}

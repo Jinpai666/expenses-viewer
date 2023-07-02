@@ -26,14 +26,14 @@
           ></v-btn>
         </div>
         <v-select
-          class="w-auto ma-2 pa-2 filters__input"
+          class="w-auto ma-2 pa-2"
           v-model="select"
           :items="['food', 'car']"
           label="Category"
           clearable
         ></v-select>
         <v-text-field
-          class="w-auto ma-2 pa-2 filters__input"
+          class="  ma-2 pa-2"
           v-model="searchPhrase"
           :counter="20"
           label="Search by name"
@@ -55,7 +55,7 @@
         </thead>
         <tbody>
           <tr
-            class="text-center"
+            class="text-center table-row"
             v-for="(item, idx) in filteredExpenses"
             :key="idx"
           >
@@ -72,11 +72,11 @@
   </div>
 </template>
 <style lang="scss">
-@import "./expensesTable.scss";
-@import "@mdi/font/css/materialdesignicons.css";
+@import "expensesTable";
+@import "../../../node_modules/@mdi/font/css/materialdesignicons.css";
 </style>
 <script>
-import data from "../data/expenses.json";
+import data from "../../data/expenses.json";
 
 export default {
   data: () => ({
@@ -104,13 +104,11 @@ export default {
       }
 
       if (this.startDate) {
-        console.log(1);
         filteredArray = filteredArray.filter(
           (item) => new Date(item.date) >= new Date(this.startDate)
         );
       }
       if (this.endDate) {
-        console.log(2);
         filteredArray = filteredArray.filter(
           (item) => new Date(item.date) <= new Date(this.endDate)
         );

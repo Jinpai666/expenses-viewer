@@ -1,10 +1,13 @@
 <script setup lang="ts">
-import ExpensesTable from "./components/ExpensesTable.vue";
+import ExpensesTable from "./components/expensesTable/ExpensesTable.vue";
+import MobileNavigation from "./components/mobileNavigation/MobileNavigation.vue";
+import TopNavigation from "./components/topNavigation/TopNavigation.vue";
 </script>
 
 <template>
   <VContainer class="container">
-    <div>TopNav</div>
+    <TopNavigation/>
+    <MobileNavigation/>
     <ExpensesTable />
   </VContainer>
 

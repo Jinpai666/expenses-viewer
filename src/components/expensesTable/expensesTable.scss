@@ -2,10 +2,17 @@
 th {
   vertical-align: middle;
 }
+.table-row{
+  &:hover{
+    background-color: #f1f1f1;
+  }
+}
+
 .filters {
   &__date-picker {
     border-bottom: 1px solid black;
     background-color: #f1f1f1;
+    transition: .2s;
     &:hover {
       background-color: #dedede;
     }
@@ -18,9 +25,7 @@ th {
     background-color: #f1f1f1;
     border: 1px solid #808080;
   }
-  &__input {
-    max-width: 360px;
-  }
+
   &__button {
     top: 3px;
     right: 3px;
