@@ -6,10 +6,6 @@ I used vuetify 3 and noticed a lot of the components are not production ready so
 
 https://mk-expenses.netlify.app/
 
-## Link to repository
-
-https://github.com/Jinpai666/expenses-viewer
-
 ## To run locally
 npm install  
 
