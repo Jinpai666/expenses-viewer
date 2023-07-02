@@ -1,7 +1,15 @@
-# Vue 3 + Vite
+# Expenses Viewer
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+I used vuetify 3 and noticed a lot of the components are not production ready so I avoided them. Some components are done manually but whathever was available was done in vuetify 3.
 
-## Recommended IDE Setup
+## Link to live
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+https://mk-expenses.netlify.app/
+
+## Link to repository
+
+https://github.com/Jinpai666/expenses-viewer
+
+## To run locally
+
+npm run dev
