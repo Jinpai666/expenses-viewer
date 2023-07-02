@@ -24,7 +24,12 @@
     width: 50%;
   }
   &_right{
-    width: 15%;
+    width: 20%;
   }
+  }
+}
+@media (max-width: 768px) {
+  .navigation {
+    display: none;
   }
 }
