@@ -13,6 +13,9 @@ th {
 }
 .table-cell{
   width: 190px;
+  @media (max-width: 768px) {
+    padding: 0 !important;
+  }
 }
 .expenses, .pagination{
   font-family: Roboto, sans-serif;
