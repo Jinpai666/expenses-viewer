@@ -15,17 +15,17 @@
 <v-row class="mt-4">
   <v-col>
     <h2 class="summary__title">Per period</h2>
-    <div class="mt-2" v-for="(total, period) in filteredPeriodSummary" :key="period">
+    <div class="mt-4" v-for="(total, period) in filteredPeriodSummary" :key="period">
       <p class="summary__accent">{{ period }}</p>
-      <p>{{ total }} PLN</p>
+      <p  class="mt-2">{{ total }} PLN</p>
       <v-divider></v-divider>
     </div>
   </v-col>
   <v-col>
     <h2 class="summary__title">Per category</h2>
-    <div class="mt-2" v-for="(total, category) in categorySummary" :key="category">
+    <div class="mt-4" v-for="(total, category) in categorySummary" :key="category">
       <p class="summary__accent">{{ category }}</p>
-      <p>{{ total }} PLN</p>
+      <p  class="mt-2">{{ total }} PLN</p>
       <v-divider></v-divider>
     </div>
   </v-col>

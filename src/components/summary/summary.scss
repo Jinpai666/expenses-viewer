@@ -6,6 +6,9 @@
   &__title {
     font-size: 24px;
     font-weight: bold;
+    @media (max-width: 768px) {
+      font-size: 18px;
+    }
   }
   &__accent{
     font-weight: bold;
