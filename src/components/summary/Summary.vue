@@ -1,6 +1,8 @@
 <template>
   <div class="summary mt-4 pl-4">
-    <v-form class="filters d-md-flex align-center justify-center">
+    <h1 class="section-title mt-8">Summary</h1>
+
+    <v-form class="summary__selection d-md-flex align-center justify-center">
       <v-select
           class="w-auto ma-2 pa-2 "
           v-model="select"
@@ -9,22 +11,28 @@
       ></v-select>
     </v-form>
 
-    <h2 class="summary__title mt-4">Summary</h2>
-    <p class="mt-2 pb-2">Total: {{ totalExpenses }} PLN</p>
-
-    <h2>Per period</h2>
+    <p class="mt-2 pb-2 summary__accent">Total: {{ totalExpenses }} PLN</p>
+<v-row class="mt-4">
+  <v-col>
+    <h2 class="summary__title">Per period</h2>
     <div class="mt-2" v-for="(total, period) in filteredPeriodSummary" :key="period">
-      <p>{{ period }}</p>
+      <p class="summary__accent">{{ period }}</p>
       <p>{{ total }} PLN</p>
       <v-divider></v-divider>
     </div>
-
-    <h2 class="summary__title mt-4">Per category</h2>
+  </v-col>
+  <v-col>
+    <h2 class="summary__title">Per category</h2>
     <div class="mt-2" v-for="(total, category) in categorySummary" :key="category">
-      <p>{{ category }}</p>
+      <p class="summary__accent">{{ category }}</p>
       <p>{{ total }} PLN</p>
       <v-divider></v-divider>
     </div>
+  </v-col>
+</v-row>
+
+
+
   </div>
 </template>
 

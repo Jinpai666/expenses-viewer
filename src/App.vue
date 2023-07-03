@@ -7,7 +7,6 @@ import Summary from "./components/summary/Summary.vue";
 
 <template>
   <VContainer class="container">
-    <h1>Expenses Table</h1>
     <TopNavigation/>
     <MobileNavigation/>
     <ExpensesTable />
@@ -16,14 +15,9 @@ import Summary from "./components/summary/Summary.vue";
 
 </template>
 
-<style scoped>
-  .container{
-    max-width: 1200px !important;
-  }
-  h1{
-    font-family: 'Catamaran', sans-serif;
-    font-weight: bold;
-    font-size: 36px;
-    text-align: center;
-  }
+<style >
+@import "./style.scss";
+@import "./reset.scss";
+
+
 </style>

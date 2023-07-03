@@ -1,6 +1,8 @@
 <template>
   <div>
-    <div>
+    <h1 class="section-title">Expenses Table</h1>
+
+    <div class="expenses">
       <v-form class="filters d-md-flex align-center justify-center">
         <div
           class="position-relative filters__date-picker w-auto ma-2 pa-2 rounded-tse"

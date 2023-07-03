@@ -1,6 +1,13 @@
-.summary{
-  &__title{
-      font-size: 24px;
-      font-weight: bold;
+.summary {
+    font-family: Roboto, sans-serif;
+  &__selection{
+    font-family: inherit;
+  }
+  &__title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  &__accent{
+    font-weight: bold;
   }
 }
